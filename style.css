@@ -210,12 +210,13 @@ ul { list-style: none; }
 .hero-image {
   position: relative;
   display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
+  align-items: flex-start;
+  justify-content: center;
   background: transparent;
-  padding: 80px 40px 0;
+  padding: 0;
   overflow: visible;
-  margin-bottom: -80px;
+  margin-top: 280px;
+  margin-right: 0;
 }
 
 .hero-image::before {
@@ -236,16 +237,16 @@ ul { list-style: none; }
   position: relative;
   z-index: 2;
   width: 100%;
-  max-width: 520px;
-  height: 520px;
+  max-width: 620px;
+  height: 620px;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
 }
 
 .avatar-circle {
-  width: 480px;
-  height: 480px;
+  width: 580px;
+  height: 580px;
   border-radius: 50%;
   background: rgba(0, 0, 0, 0.05);
   border: 3px solid rgba(0, 0, 0, 0.08);
@@ -276,8 +277,8 @@ ul { list-style: none; }
 /* Badge on avatar */
 .avatar-badge {
   position: absolute;
-  bottom: 20px;
-  right: 20px;
+  bottom: 10px;
+  right: 10px;
   width: 90px;
   height: 90px;
   border-radius: 50%;
@@ -301,8 +302,8 @@ ul { list-style: none; }
 /* Decorative text near avatar */
 .hero-decoration {
   position: absolute;
-  bottom: 60px;
-  right: 40px;
+  bottom: -40px;
+  right: -80px;
   font-size: 0.95rem;
   font-weight: 600;
   color: rgba(0, 0, 0, 0.1);
@@ -313,8 +314,8 @@ ul { list-style: none; }
 
 .expand-icon {
   position: absolute;
-  bottom: 30px;
-  right: 30px;
+  bottom: -60px;
+  right: -40px;
   font-size: 1.8rem;
   color: rgba(0, 0, 0, 0.15);
   z-index: 1;
