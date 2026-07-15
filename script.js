@@ -195,6 +195,87 @@ skillModal.addEventListener('click', (e) => {
     skillModal.classList.remove('open');
   }
 });
+
+/* ===== PROJECT MODAL ===== */
+const projectData = {
+  asp: {
+    title: 'ASP – A Space For Park 🚗',
+    subtitle: 'A Smart Peer-to-Peer Urban Parking Platform',
+    description: 'ASP (A Space For Park) is a smart parking platform inspired by the Uber business model. Instead of connecting riders with drivers, ASP connects drivers who need a safe parking space with nearby property owners who have unused parking areas.\n\nDrivers can search for available parking spaces in real time, compare options, and reserve a secure spot before reaching their destination. On the other hand, homeowners, shop owners, and private landowners can list their unused parking spaces and earn additional income whenever someone parks there.\n\nThe platform is designed to reduce the time spent searching for parking, decrease traffic congestion, and make urban parking safer, faster, and more convenient for everyone.',
+    features: [
+      '🚗 Real-time parking space discovery',
+      '📍 Google Maps integration for nearby parking',
+      '📅 Advance parking reservation',
+      '💳 Secure online payments',
+      '🔐 OTP-based parking verification',
+      '⭐ Ratings and reviews',
+      '👤 Verified parking providers with admin approval',
+      '📊 Dashboard for managing bookings and earnings'
+    ],
+    techStack: ['React.js', 'Node.js & Express.js', 'MongoDB', 'JWT & OTP', 'Google Maps API', 'Razorpay', 'Vercel'],
+    impact: 'ASP transforms unused private parking spaces into a shared resource, creating a safer and more efficient parking experience for drivers while providing a new source of income for property owners.',
+    link: 'https://park-fbps-alen-nelsons-projects.vercel.app',
+    linkText: 'Visit Website'
+  }
+};
+
+const projectCards = document.querySelectorAll('.project-card');
+const projectModal = document.getElementById('projectModal');
+const projectModalClose = document.getElementById('projectModalClose');
+const projectModalBody = document.getElementById('projectModalBody');
+
+projectCards.forEach(card => {
+  card.addEventListener('click', () => {
+    const projectName = card.dataset.project;
+    const project = projectData[projectName];
+    
+    if (project) {
+      let html = `
+        <div class="project-modal-header">
+          <h2>${project.title}</h2>
+          <p class="project-subtitle">${project.subtitle}</p>
+        </div>
+        <div class="project-modal-description">
+          <p>${project.description.replace(/\n/g, '</p><p>')}</p>
+        </div>
+        <div class="project-modal-section">
+          <h3>✨ Key Features</h3>
+          <ul class="project-features">
+            ${project.features.map(feature => `<li>${feature}</li>`).join('')}
+          </ul>
+        </div>
+        <div class="project-modal-section">
+          <h3>🛠 Tech Stack</h3>
+          <div class="tech-stack">
+            ${project.techStack.map(tech => `<span class="tech-badge">${tech}</span>`).join('')}
+          </div>
+        </div>
+        <div class="project-modal-section">
+          <h3>💡 Impact</h3>
+          <p>${project.impact}</p>
+        </div>
+        <div class="project-modal-footer">
+          <a href="${project.link}" target="_blank" class="btn btn-primary">
+            <i class="fas fa-external-link-alt"></i> ${project.linkText}
+          </a>
+        </div>
+      `;
+      
+      projectModalBody.innerHTML = html;
+      projectModal.classList.add('open');
+    }
+  });
+});
+
+projectModalClose.addEventListener('click', () => {
+  projectModal.classList.remove('open');
+});
+
+projectModal.addEventListener('click', (e) => {
+  if (e.target === projectModal) {
+    projectModal.classList.remove('open');
+  }
+});
 const contactForm = document.getElementById('contact-form');
 
 contactForm.addEventListener('submit', async (e) => {

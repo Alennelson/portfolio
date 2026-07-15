@@ -158,77 +158,29 @@
     <div class="container">
       <h2 class="section-title">My <span>Projects</span></h2>
       <div class="projects-grid">
-        <div class="project-card">
-          <div class="project-img"><i class="fas fa-network-wired"></i></div>
+        <div class="project-card" data-project="asp">
+          <div class="project-img"><i class="fas fa-parking"></i></div>
           <div class="project-content">
             <div class="project-tags">
-              <span>Kubernetes</span>
-              <span>Docker</span>
-              <span>CI/CD</span>
+              <span>React.js</span>
+              <span>Node.js</span>
+              <span>MongoDB</span>
             </div>
-            <h3>Microservices Pipeline</h3>
-            <p>Built end-to-end CI/CD pipeline using GitLab for microservices deployment on Kubernetes.</p>
-          </div>
-        </div>
-        <div class="project-card">
-          <div class="project-img"><i class="fas fa-cloud"></i></div>
-          <div class="project-content">
-            <div class="project-tags">
-              <span>AWS</span>
-              <span>Terraform</span>
-              <span>IaC</span>
-            </div>
-            <h3>Cloud Infrastructure</h3>
-            <p>Designed and deployed scalable AWS infrastructure using Terraform for 100k+ users.</p>
-          </div>
-        </div>
-        <div class="project-card">
-          <div class="project-img"><i class="fas fa-boxes"></i></div>
-          <div class="project-content">
-            <div class="project-tags">
-              <span>Docker</span>
-              <span>Compose</span>
-            </div>
-            <h3>Dev Environment</h3>
-            <p>Created containerized development environment reducing setup time by 80%.</p>
-          </div>
-        </div>
-        <div class="project-card">
-          <div class="project-img"><i class="fas fa-chart-bar"></i></div>
-          <div class="project-content">
-            <div class="project-tags">
-              <span>Prometheus</span>
-              <span>Grafana</span>
-            </div>
-            <h3>Monitoring System</h3>
-            <p>Set up comprehensive monitoring stack with Prometheus and Grafana dashboards.</p>
-          </div>
-        </div>
-        <div class="project-card">
-          <div class="project-img"><i class="fas fa-lock"></i></div>
-          <div class="project-content">
-            <div class="project-tags">
-              <span>Security</span>
-              <span>Compliance</span>
-            </div>
-            <h3>Security Pipeline</h3>
-            <p>Automated security scanning and compliance checks in CI/CD pipeline, 99.9% uptime.</p>
-          </div>
-        </div>
-        <div class="project-card">
-          <div class="project-img"><i class="fas fa-gears"></i></div>
-          <div class="project-content">
-            <div class="project-tags">
-              <span>Ansible</span>
-              <span>Automation</span>
-            </div>
-            <h3>Automation Suite</h3>
-            <p>Built Ansible playbooks for server provisioning and configuration management.</p>
+            <h3>ASP – A Space For Park 🚗</h3>
+            <p>A smart peer-to-peer urban parking platform connecting drivers with property owners for safe and convenient parking.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- ===== PROJECT MODAL ===== -->
+  <div id="projectModal" class="modal">
+    <div class="modal-content project-modal">
+      <button class="modal-close" id="projectModalClose">&times;</button>
+      <div id="projectModalBody"></div>
+    </div>
+  </div>
 
 
 

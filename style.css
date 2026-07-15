@@ -471,6 +471,112 @@ ul { list-style: none; }
 .modal-description { background: var(--bg); padding: 16px; border-radius: 10px; margin: 20px 0; border-left: 4px solid var(--primary); }
 .modal-description p { color: var(--text-muted); margin: 0; line-height: 1.7; font-size: 0.95rem; }
 
+/* ===== PROJECT MODAL ===== */
+.project-modal {
+  max-width: 800px;
+}
+
+.project-modal-header {
+  margin-bottom: 24px;
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 16px;
+}
+
+.project-modal-header h2 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--text);
+  margin: 0 0 8px 0;
+}
+
+.project-subtitle {
+  color: var(--text-muted);
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.project-modal-description {
+  margin: 20px 0;
+  background: var(--bg);
+  padding: 16px;
+  border-radius: 10px;
+  border-left: 4px solid var(--primary);
+}
+
+.project-modal-description p {
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin: 12px 0;
+  font-size: 0.95rem;
+}
+
+.project-modal-description p:first-child {
+  margin-top: 0;
+}
+
+.project-modal-section {
+  margin: 20px 0;
+}
+
+.project-modal-section h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.project-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.project-features li {
+  background: var(--bg);
+  padding: 12px;
+  border-radius: 8px;
+  border-left: 3px solid var(--primary);
+  font-size: 0.9rem;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tech-badge {
+  background: rgba(255, 165, 0, 0.1);
+  color: var(--primary);
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid var(--primary);
+}
+
+.project-modal-footer {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  gap: 12px;
+}
+
+.project-modal-footer .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
 /* ===== PROJECTS ===== */
 .projects { background: #fff; padding: 100px 0; }
 
