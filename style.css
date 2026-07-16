@@ -1151,3 +1151,45 @@ ul { list-style: none; }
     font-size: 0.8rem;
   }
 }
+
+
+/* ===== MOBILE FIX - HERO IMAGE ===== */
+@media (max-width: 768px) {
+  .hero-image {
+    margin-top: 0 !important;
+    margin-right: 0 !important;
+    padding: 20px !important;
+    background: linear-gradient(135deg, var(--primary) 0%, rgba(255, 165, 0, 0.8) 100%);
+    min-height: 350px;
+  }
+  
+  .avatar-circle {
+    width: 260px !important;
+    height: 260px !important;
+  }
+  
+  .hero-decoration {
+    display: none !important;
+  }
+  
+  .expand-icon {
+    display: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-image {
+    padding: 16px !important;
+    min-height: 300px;
+  }
+  
+  .avatar-circle {
+    width: 220px !important;
+    height: 220px !important;
+  }
+  
+  .avatar-container {
+    max-width: 220px !important;
+    height: 220px !important;
+  }
+}
