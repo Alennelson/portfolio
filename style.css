@@ -687,9 +687,14 @@ ul { list-style: none; }
   .hamburger { display: flex; }
   
   /* HERO SECTION */
-  .hero { min-height: 90vh; }
-  .hero-content { 
-    padding: 100px 24px 40px; 
+  .hero { 
+    grid-template-columns: 1fr;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .hero::before { 
+    display: none;
   }
   .hero-greeting { font-size: 1rem; }
   .hero-name { 
@@ -1155,17 +1160,40 @@ ul { list-style: none; }
 
 /* ===== MOBILE FIX - HERO IMAGE ===== */
 @media (max-width: 768px) {
+  .hero {
+    display: flex;
+    flex-direction: column;
+  }
+  
   .hero-image {
-    margin-top: 0 !important;
+    order: -1;
+    margin-top: 80px !important;
     margin-right: 0 !important;
     padding: 20px !important;
-    background: linear-gradient(135deg, var(--primary) 0%, rgba(255, 165, 0, 0.8) 100%);
-    min-height: 350px;
+    background: transparent;
+    min-height: auto;
+    align-self: flex-end;
+    width: 50%;
   }
   
   .avatar-circle {
-    width: 260px !important;
-    height: 260px !important;
+    width: 200px !important;
+    height: 200px !important;
+  }
+  
+  .avatar-container {
+    max-width: 200px !important;
+    height: 200px !important;
+  }
+  
+  .avatar-badge {
+    width: 55px;
+    height: 55px;
+  }
+  
+  .hero-content {
+    padding: 80px 18px 30px;
+    order: 1;
   }
   
   .hero-decoration {
@@ -1179,17 +1207,17 @@ ul { list-style: none; }
 
 @media (max-width: 480px) {
   .hero-image {
+    width: 55%;
     padding: 16px !important;
-    min-height: 300px;
   }
   
   .avatar-circle {
-    width: 220px !important;
-    height: 220px !important;
+    width: 160px !important;
+    height: 160px !important;
   }
   
   .avatar-container {
-    max-width: 220px !important;
-    height: 220px !important;
+    max-width: 160px !important;
+    height: 160px !important;
   }
 }
