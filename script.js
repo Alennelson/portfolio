@@ -303,8 +303,8 @@ contactForm.addEventListener('submit', async (e) => {
   btn.disabled = true;
   
   try {
-    // Send email using Node.js backend
-    const response = await fetch('http://localhost:3000/send-email', {
+    // Send email using Formspree service
+    const response = await fetch('https://formspree.io/f/xannzboy', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -317,21 +317,19 @@ contactForm.addEventListener('submit', async (e) => {
       })
     });
     
-    const result = await response.json();
-    
-    if (response.ok && result.success) {
+    if (response.ok) {
       btn.innerHTML = originalText;
       btn.disabled = false;
       contactForm.reset();
-      alert('✅ Message sent successfully! Thank you for reaching out.');
+      alert('✅ Message sent successfully! I\'ll get back to you soon at ' + email);
     } else {
-      throw new Error(result.error || 'Failed to send email');
+      throw new Error('Failed to send email');
     }
   } catch (error) {
     console.error('❌ Error sending email:', error);
     btn.innerHTML = originalText;
     btn.disabled = false;
-    alert('Failed to send message. Please try again later or contact directly at alennelson2004@gmail.com');
+    alert('Failed to send message.\n\nPlease contact me directly at:\n📧 alennelson2004@gmail.com\n📱 +91 9645498704');
   }
 });
 
