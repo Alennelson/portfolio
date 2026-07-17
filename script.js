@@ -278,7 +278,7 @@ projectModal.addEventListener('click', (e) => {
 });
 const contactForm = document.getElementById('contact-form');
 
-contactForm.addEventListener('submit', async (e) => {
+contactForm.addEventListener('submit', (e) => {
   e.preventDefault();
   
   const name = document.getElementById('name').value.trim();
@@ -299,52 +299,26 @@ contactForm.addEventListener('submit', async (e) => {
   
   const btn = contactForm.querySelector('button[type="submit"]');
   const originalText = btn.innerHTML;
-  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+  
+  // Show success message
+  btn.innerHTML = '✅ Message Prepared!';
   btn.disabled = true;
   
-  try {
-    // Create email content
-    const emailContent = `
-Name: ${name}
-Email: ${email}
-Subject: ${subject}
-
-Message:
-${message}
-    `;
-    
-    // Send using Web3Forms (free, no backend needed)
-    const response = await fetch('https://api.web3forms.com/submit', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        access_key: 'd6d60302-8f5a-45a6-9879-9c1e0cde45cc',
-        name: name,
-        email: email,
-        subject: subject,
-        message: message,
-        to_email: 'alennelson2004@gmail.com'
-      })
-    });
-    
-    const result = await response.json();
-    
-    if (result.success) {
-      btn.innerHTML = originalText;
-      btn.disabled = false;
-      contactForm.reset();
-      alert('✅ Message sent successfully!\n\nThank you for reaching out, ' + name + '!\nI\'ll reply to you soon at ' + email);
-    } else {
-      throw new Error('Failed to send email');
-    }
-  } catch (error) {
-    console.error('❌ Error sending email:', error);
+  // Create mailto link with the message
+  const mailtoLink = `mailto:alennelson2004@gmail.com?subject=${encodeURIComponent('Portfolio Contact: ' + subject)}&body=${encodeURIComponent('From: ' + name + ' (' + email + ')\n\n' + message)}`;
+  
+  // Show instructions
+  alert(`📧 Your message is ready!\n\nClick OK to open your email client and send:\n\nTo: alennelson2004@gmail.com\nSubject: ${subject}\n\nOr copy and send manually if email doesn't open.`);
+  
+  // Open email client
+  window.location.href = mailtoLink;
+  
+  // Reset form after a short delay
+  setTimeout(() => {
     btn.innerHTML = originalText;
     btn.disabled = false;
-    alert('Failed to send message via form.\n\n📧 Please email me directly:\nalennelson2004@gmail.com\n\n📱 Or call:\n+91 9645498704');
-  }
+    contactForm.reset();
+  }, 1000);
 });
 
 /* ===== YEAR IN FOOTER ===== */
