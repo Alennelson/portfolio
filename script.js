@@ -303,25 +303,39 @@ contactForm.addEventListener('submit', async (e) => {
   btn.disabled = true;
   
   try {
-    // Send email using Formspree service
-    const response = await fetch('https://formspree.io/f/xannzboy', {
+    // Create email content
+    const emailContent = `
+Name: ${name}
+Email: ${email}
+Subject: ${subject}
+
+Message:
+${message}
+    `;
+    
+    // Send using Web3Forms (free, no backend needed)
+    const response = await fetch('https://api.web3forms.com/submit', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
+        access_key: 'd6d60302-8f5a-45a6-9879-9c1e0cde45cc',
         name: name,
         email: email,
         subject: subject,
         message: message,
+        to_email: 'alennelson2004@gmail.com'
       })
     });
     
-    if (response.ok) {
+    const result = await response.json();
+    
+    if (result.success) {
       btn.innerHTML = originalText;
       btn.disabled = false;
       contactForm.reset();
-      alert('✅ Message sent successfully! I\'ll get back to you soon at ' + email);
+      alert('✅ Message sent successfully!\n\nThank you for reaching out, ' + name + '!\nI\'ll reply to you soon at ' + email);
     } else {
       throw new Error('Failed to send email');
     }
@@ -329,7 +343,7 @@ contactForm.addEventListener('submit', async (e) => {
     console.error('❌ Error sending email:', error);
     btn.innerHTML = originalText;
     btn.disabled = false;
-    alert('Failed to send message.\n\nPlease contact me directly at:\n📧 alennelson2004@gmail.com\n📱 +91 9645498704');
+    alert('Failed to send message via form.\n\n📧 Please email me directly:\nalennelson2004@gmail.com\n\n📱 Or call:\n+91 9645498704');
   }
 });
 
