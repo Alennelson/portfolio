@@ -1180,7 +1180,7 @@ ul { list-style: none; }
   
   .hero-image {
     order: 2;
-    margin-top: 30px !important;
+    margin-top: 80px !important;
     margin-right: -100px !important;
     padding: 0 !important;
     background: transparent !important;
@@ -1235,7 +1235,7 @@ ul { list-style: none; }
   
   .hero-image {
     width: auto;
-    margin-top: 20px !important;
+    margin-top: 60px !important;
     margin-right: -80px !important;
     overflow: visible;
   }
